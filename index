@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Poonam &amp; Rahul · 25 November 2026</title>
+<meta name="description" content="You're invited to the wedding of Poonam & Rahul — 25 November 2026, VG Salasar Garden, New Delhi">
+<meta name="theme-color" content="#5a0b16">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600&family=Tiro+Devanagari+Hindi:ital@0;1&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --maroon:#5a0b16; --crimson:#8e1426; --rose:#c2405a; --blush:#f6d3d6; --petal:#f9e4e3;
+  --ivory:#fff8f0; --cream:#fbefe2; --gold:#c9a24b; --gold-l:#ecd28c; --gold-d:#9a7425;
+  --ink:#4a1a1f; --ink-soft:#7a4a4e;
+  --script:'Great Vibes',cursive; --serif:'Cormorant Garamond',Georgia,serif; --caps:'Cinzel',serif;
+  --hindi:'Tiro Devanagari Hindi',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:var(--serif); color:var(--ink); overflow-x:hidden;
+  background:
+    radial-gradient(1200px 700px at 10% -10%, #ffe3e3 0%, transparent 60%),
+    radial-gradient(900px 600px at 110% 20%, #fbd6cf 0%, transparent 55%),
+    radial-gradient(900px 700px at 50% 120%, #f3c6c2 0%, transparent 60%),
+    linear-gradient(180deg,#fdf1ea 0%, #f9e2dc 50%, #f6d9d3 100%);
+  background-attachment:fixed;
+  -webkit-font-smoothing:antialiased;
+}
+body.locked{overflow:hidden}
+[lang-hi]{display:none}
+body.hi [lang-en]{display:none}
+body.hi [lang-hi]{display:revert}
+body.hi .hi-font, .hindi{font-family:var(--hindi)}
+
+/* ---------- floating layers ---------- */
+#sparkles{position:fixed;inset:0;pointer-events:none;z-index:2}
+#petals{position:fixed;inset:0;pointer-events:none;z-index:3;overflow:hidden}
+.petal{
+  position:absolute; top:-40px; width:18px; height:22px; opacity:.85;
+  background:radial-gradient(circle at 30% 30%, #ffd9df 0%, #e58ea0 45%, #b5304b 100%);
+  border-radius:150% 0 150% 0; filter:drop-shadow(0 2px 2px rgba(90,11,22,.18));
+  animation:fall linear forwards;
+}
+.petal.light{background:radial-gradient(circle at 30% 30%, #fff 0%, #f8cdd4 50%, #e79aaa 100%)}
+@keyframes fall{
+  0%{transform:translate3d(0,-5vh,0) rotate(0deg) rotateY(0)}
+  25%{transform:translate3d(var(--sway),25vh,0) rotate(90deg) rotateY(160deg)}
+  50%{transform:translate3d(calc(var(--sway)*-0.6),55vh,0) rotate(180deg) rotateY(320deg)}
+  100%{transform:translate3d(var(--sway),110vh,0) rotate(360deg) rotateY(720deg)}
+}
+
+/* ---------- ENVELOPE / INTRO ---------- */
+#intro{position:fixed;inset:0;z-index:50;perspective:1600px;cursor:pointer}
+.door{
+  position:absolute; top:0; bottom:0; width:50.2%;
+  background:
+    radial-gradient(120% 80% at 50% 50%, rgba(255,255,255,.07), transparent 60%),
+    repeating-linear-gradient(115deg, rgba(255,255,255,.025) 0 2px, transparent 2px 6px),
+    radial-gradient(140% 100% at 50% 40%, #a3172d 0%, #7a0f20 45%, #4a0612 100%);
+  transition:transform 1.8s cubic-bezier(.7,0,.2,1), filter 1.8s;
+  overflow:hidden;
+}
+.door.left{left:0; transform-origin:left center; box-shadow:inset -8px 0 18px rgba(0,0,0,.35)}
+.door.right{right:0; transform-origin:right center; box-shadow:inset 8px 0 18px rgba(0,0,0,.35)}
+.door svg.lines{position:absolute; inset:0; width:200%; height:100%}
+.door.right svg.lines{left:-100%}
+#intro.open .door.left{transform:rotateY(-105deg); filter:brightness(.6)}
+#intro.open .door.right{transform:rotateY(105deg); filter:brightness(.6)}
+#intro.gone{display:none}
+
+.corner-roses{position:absolute; width:min(52vw,320px); pointer-events:none}
+.corner-roses.tl{top:-30px; left:-40px}
+.corner-roses.br{bottom:-30px; right:-40px; transform:rotate(180deg)}
+.corner-roses.tr{top:-40px; right:-50px; width:min(36vw,220px); transform:scaleX(-1) rotate(10deg); opacity:.9}
+.corner-roses.bl{bottom:-40px; left:-50px; width:min(36vw,220px); transform:rotate(190deg) scaleX(-1); opacity:.9}
+
+.intro-center{
+  position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  z-index:5; pointer-events:none; text-align:center; color:var(--gold-l);
+  transition:opacity .9s ease;
+}
+#intro.open .intro-center{opacity:0}
+.intro-center .kicker{font-family:var(--caps); letter-spacing:.42em; font-size:clamp(12px,3.4vw,15px); text-shadow:0 0 12px rgba(255,214,140,.5)}
+.intro-center .tag{font-family:var(--caps); letter-spacing:.32em; font-size:clamp(11px,3vw,13px); margin-top:4px}
+.seal-wrap{position:relative; width:min(78vw,380px); height:min(78vw,380px); margin:14px 0 6px}
+.bow{position:absolute; inset:0; width:100%; height:100%; filter:drop-shadow(0 10px 18px rgba(0,0,0,.45))}
+.seal{
+  position:absolute; left:50%; top:50%; width:36%; aspect-ratio:1; transform:translate(-50%,-50%);
+  border-radius:50%; pointer-events:auto; cursor:pointer;
+  background:
+    radial-gradient(circle at 35% 30%, #fff6dc 0%, #f1d49a 30%, #d2a95c 60%, #a57a31 100%);
+  box-shadow: 0 6px 16px rgba(0,0,0,.45), inset 0 -6px 12px rgba(120,80,20,.5), inset 0 6px 10px rgba(255,255,255,.6);
+  display:grid; place-items:center;
+  animation:sealPulse 2.6s ease-in-out infinite;
+  transition:transform .9s cubic-bezier(.5,-0.4,.3,1.4), opacity .9s;
+}
+.seal::before{ /* irregular wax rim */
+  content:""; position:absolute; inset:-7%; border-radius:47% 53% 49% 51% / 52% 46% 54% 48%;
+  background:radial-gradient(circle at 40% 30%, #f3d9a6, #b88a3e 70%, #8d6424);
+  z-index:-1; box-shadow:0 4px 10px rgba(0,0,0,.35);
+}
+.seal::after{content:""; position:absolute; inset:9%; border-radius:50%; border:1.5px solid rgba(120,80,25,.55); box-shadow:inset 0 0 0 4px rgba(255,240,200,.25)}
+.seal .mono{white-space:nowrap; font-family:var(--script); color:#7d5518; font-size:clamp(30px,9vw,46px); line-height:1; text-shadow:0 1px 0 rgba(255,255,255,.65), 0 -1px 0 rgba(90,55,10,.35)}
+.seal .mono small{font-family:var(--serif); font-size:.38em; vertical-align:middle; margin:0 2px}
+@keyframes sealPulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.05)}}
+#intro.open .seal{transform:translate(-50%,-50%) scale(1.7) rotate(25deg); opacity:0; animation:none}
+#intro.open .bow{transition:opacity .7s, transform 1s; opacity:0; transform:scale(1.2)}
+.tap{
+  margin-top:16px; font-family:var(--serif); font-style:italic; color:#ffe9c0; font-size:clamp(15px,4vw,18px);
+  animation:tapBlink 2.2s ease-in-out infinite; letter-spacing:.04em
+}
+.tap .hand{display:inline-block; animation:tapHand 1.4s ease-in-out infinite}
+@keyframes tapBlink{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes tapHand{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.names-intro{font-family:var(--script); font-size:clamp(28px,8vw,40px); color:#ffe0a8; margin-top:10px; text-shadow:0 2px 14px rgba(255,190,110,.55)}
+
+/* ---------- MAIN ---------- */
+main{position:relative; z-index:4; max-width:560px; margin:0 auto; padding:28px 16px 80px; opacity:0; transition:opacity 1.4s ease .3s}
+body.revealed main{opacity:1}
+
+.lang-toggle{
+  position:fixed; top:14px; right:14px; z-index:40; display:flex; border-radius:999px; overflow:hidden;
+  background:rgba(255,248,240,.85); backdrop-filter:blur(8px); border:1px solid rgba(201,162,75,.6);
+  box-shadow:0 4px 14px rgba(90,11,22,.15); opacity:0; transition:opacity 1s 1s;
+}
+body.revealed .lang-toggle{opacity:1}
+.lang-toggle button{border:0; background:transparent; padding:8px 14px; font-family:var(--serif); font-size:15px; color:var(--ink); cursor:pointer}
+.lang-toggle button.on{background:linear-gradient(135deg,var(--crimson),var(--maroon)); color:#fff1d6}
+
+.card{
+  position:relative; margin:26px 0; padding:44px 26px 34px; text-align:center;
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(255,255,255,.95), rgba(255,250,244,.88)),
+    linear-gradient(#fffaf4,#fdf0e8);
+  border-radius:24px; box-shadow:0 18px 40px rgba(122,15,32,.14), 0 2px 0 rgba(255,255,255,.8) inset;
+  opacity:0; transform:translateY(40px) scale(.98); transition:opacity 1s ease, transform 1s cubic-bezier(.2,.7,.2,1);
+}
+.card.in{opacity:1; transform:none}
+.card::before{ content:""; position:absolute; inset:9px; border-radius:18px; border:1px solid rgba(201,162,75,.55); pointer-events:none }
+.card::after{ content:""; position:absolute; inset:14px; border-radius:15px; border:1px dashed rgba(201,162,75,.25); pointer-events:none }
+.card.arch{ border-radius:999px 999px 26px 26px; padding-top:86px }
+.card.arch::before{ border-radius:999px 999px 20px 20px }
+.card.arch::after{ border-radius:999px 999px 16px 16px }
+.card .rose-deco{position:absolute; width:120px; pointer-events:none; filter:drop-shadow(0 6px 8px rgba(90,11,22,.25))}
+.card .rose-deco.tl{top:-34px; left:-26px}
+.card .rose-deco.br{bottom:-34px; right:-26px; transform:rotate(170deg)}
+.card .rose-deco.tr{top:-30px; right:-22px; transform:scaleX(-1); width:100px}
+
+.ganesh{
+  width:70px; height:70px; margin:0 auto 8px; color:var(--crimson);
+}
+.om-line{font-family:var(--hindi); color:var(--crimson); font-size:18px; letter-spacing:.05em}
+.shloka{font-family:var(--hindi); color:var(--ink-soft); font-size:16px; line-height:1.9; margin-top:10px}
+.divider{display:flex; align-items:center; gap:10px; justify-content:center; margin:18px auto; color:var(--gold); width:80%}
+.divider::before,.divider::after{content:""; flex:1; height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.divider span{font-size:14px}
+
+.monogram{
+  width:96px; height:96px; margin:0 auto 6px; border-radius:50%; display:grid; place-items:center; position:relative;
+  border:1.5px solid var(--gold); color:var(--gold-d); font-family:var(--script); font-size:40px; white-space:nowrap;
+  background:radial-gradient(circle,#fffaf0,#f8ead6);
+}
+.monogram::before{content:""; position:absolute; inset:5px; border-radius:50%; border:1px solid rgba(201,162,75,.5)}
+.small-caps{font-family:var(--caps); letter-spacing:.28em; font-size:12px; color:var(--rose)}
+body.hi .small-caps{font-family:var(--hindi); letter-spacing:.06em; font-size:15px}
+.names{font-family:var(--script); color:var(--maroon); font-size:clamp(54px,15vw,78px); line-height:1.05; margin:8px 0 2px; text-shadow:0 2px 0 rgba(255,255,255,.8)}
+.names .amp{display:block; font-family:var(--serif); font-style:italic; font-size:.38em; color:var(--gold-d); margin:2px 0}
+body.hi .names{font-family:var(--hindi); font-size:clamp(44px,12vw,62px); line-height:1.3}
+.date-big{font-family:var(--caps); color:var(--crimson); letter-spacing:.18em; font-size:16px; margin-top:12px}
+body.hi .date-big{font-family:var(--hindi); letter-spacing:.04em; font-size:19px}
+.date-row{display:flex; align-items:center; justify-content:center; gap:14px; margin-top:16px; color:var(--maroon)}
+.date-row .side{font-family:var(--caps); letter-spacing:.2em; font-size:12px; padding:6px 0; border-top:1px solid var(--gold); border-bottom:1px solid var(--gold); min-width:90px}
+.date-row .day{font-family:var(--serif); font-size:58px; font-weight:500; line-height:1; color:var(--crimson)}
+body.hi .date-row .side{font-family:var(--hindi); letter-spacing:.03em; font-size:15px}
+
+h2.title{font-family:var(--script); font-weight:400; color:var(--maroon); font-size:clamp(42px,11vw,56px); line-height:1.1}
+body.hi h2.title{font-family:var(--hindi); font-size:clamp(30px,8vw,38px)}
+p.lead{font-size:19px; line-height:1.65; color:var(--ink-soft); margin-top:10px}
+body.hi p.lead{font-size:18px; line-height:1.9}
+.person{margin-top:20px}
+.person .who{font-family:var(--script); font-size:44px; color:var(--crimson); line-height:1.1}
+body.hi .person .who{font-family:var(--hindi); font-size:32px}
+.person .rel{font-style:italic; color:var(--ink-soft); font-size:17px; margin-top:4px; line-height:1.55}
+body.hi .person .rel{font-style:normal; font-size:16px}
+.person .heart{color:var(--rose); margin:16px 0 0; font-size:22px}
+
+/* calendar */
+.calendar{
+  margin:22px auto 6px; max-width:340px; padding:14px 12px 10px; border-radius:16px;
+  background:linear-gradient(180deg,rgba(255,255,255,.75),rgba(252,236,232,.75));
+  border:1px solid rgba(201,162,75,.45); box-shadow:inset 0 1px 0 #fff, 0 6px 16px rgba(122,15,32,.08);
+}
+.cal-month{font-family:var(--caps); letter-spacing:.25em; font-size:15px; color:var(--maroon); margin-bottom:10px}
+body.hi .cal-month{font-family:var(--hindi); letter-spacing:.05em; font-size:18px}
+.cal-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:4px; font-size:15px}
+.cal-grid .dow{font-family:var(--caps); font-size:10px; letter-spacing:.08em; color:var(--rose); padding-bottom:4px}
+body.hi .cal-grid .dow{font-family:var(--hindi); font-size:12px; letter-spacing:0}
+.cal-grid .d{position:relative; aspect-ratio:1; display:grid; place-items:center; color:var(--ink); border-radius:50%}
+.cal-grid .d.wed{color:transparent}
+.cal-grid .d .hz{position:absolute; inset:-2px; display:grid; place-items:center; color:var(--rose); font-size:26px; transition:transform .6s cubic-bezier(.5,-.5,.3,1.6), opacity .5s}
+.cal-grid .d .num{position:absolute; inset:0; display:grid; place-items:center; color:#fff7e6; font-weight:600; opacity:0; transform:scale(.2); transition:all .7s cubic-bezier(.3,1.6,.4,1) .15s; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #e45f78, var(--crimson) 60%, var(--maroon)); box-shadow:0 0 0 3px #fff, 0 0 0 4.5px var(--gold), 0 6px 14px rgba(142,20,38,.45)}
+.calendar.revealed .d.wed .hz{transform:scale(2.4); opacity:0}
+.calendar.revealed .d.wed .num{opacity:1; transform:scale(1.12)}
+.calendar:not(.revealed) .d.wed .hz{animation:heartBeat 1.3s ease-in-out infinite}
+@keyframes heartBeat{0%,100%{transform:scale(1)}15%{transform:scale(1.2)}30%{transform:scale(1)}45%{transform:scale(1.15)}}
+
+.btn{
+  display:flex; align-items:center; justify-content:center; gap:10px; width:100%; max-width:320px; margin:12px auto 0;
+  padding:13px 18px; border-radius:999px; font-family:var(--serif); font-size:18px; font-weight:500; color:var(--maroon);
+  text-decoration:none; cursor:pointer; border:1px solid rgba(201,162,75,.7);
+  background:linear-gradient(180deg,#fffaf3,#f8e6dc); box-shadow:0 1px 0 #fff inset, 0 6px 14px rgba(122,15,32,.12);
+  transition:transform .2s, box-shadow .2s;
+}
+.btn:hover{transform:translateY(-2px); box-shadow:0 1px 0 #fff inset, 0 10px 20px rgba(122,15,32,.18)}
+.btn.primary{color:#fff3d9; border-color:transparent; background:linear-gradient(135deg,#b3243d,var(--crimson) 45%,var(--maroon)); box-shadow:0 8px 20px rgba(122,15,32,.35), inset 0 1px 0 rgba(255,255,255,.25)}
+.btn svg{width:20px; height:20px; flex:none}
+body.hi .btn{font-family:var(--hindi); font-size:17px}
+
+/* countdown */
+.countdown{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:20px}
+.cd{padding:14px 4px 10px; border-radius:16px; background:linear-gradient(160deg,#9b1830,var(--maroon)); color:#ffe9c2; box-shadow:0 8px 18px rgba(90,11,22,.3), inset 0 0 0 1px rgba(236,210,140,.35)}
+.cd b{display:block; font-family:var(--serif); font-size:clamp(28px,8vw,38px); font-weight:500; line-height:1}
+.cd span{font-family:var(--caps); font-size:9.5px; letter-spacing:.18em; opacity:.85}
+body.hi .cd span{font-family:var(--hindi); font-size:13px; letter-spacing:0}
+
+.venue-name{font-family:var(--serif); font-size:28px; font-weight:600; color:var(--maroon); margin-top:12px}
+body.hi .venue-name{font-family:var(--hindi); font-size:26px}
+.venue-addr{color:var(--ink-soft); font-size:17px; line-height:1.6; margin-top:6px}
+.pin{width:54px; height:54px; margin:0 auto; color:var(--crimson)}
+
+.closing .couplet{font-family:var(--hindi); color:var(--crimson); font-size:19px; line-height:1.9}
+.closing .from{font-family:var(--script); font-size:40px; color:var(--maroon); margin-top:14px; line-height:1.15}
+body.hi .closing .from{font-family:var(--hindi); font-size:26px; line-height:1.5}
+.closing .with{font-style:italic; color:var(--ink-soft); font-size:18px}
+
+.footer-note{text-align:center; font-family:var(--caps); font-size:11px; letter-spacing:.3em; color:var(--rose); margin-top:30px; opacity:.8}
+
+.burst{position:fixed; pointer-events:none; z-index:60; font-size:18px; animation:burst 1.4s ease-out forwards}
+@keyframes burst{to{transform:translate(var(--dx),var(--dy)) rotate(var(--r)) scale(.4); opacity:0}}
+
+@media (prefers-reduced-motion:reduce){
+  .petal,.seal,.tap,.tap .hand{animation:none!important}
+  .door{transition-duration:.6s}
+}
+</style>
+</head>
+<body class="locked">
+
+<!-- ======= SVG library ======= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="gRed" cx="50%" cy="55%" r="60%">
+      <stop offset="0" stop-color="#5c0614"/><stop offset=".45" stop-color="#a3132c"/><stop offset=".85" stop-color="#d63a52"/><stop offset="1" stop-color="#ef6f80"/>
+    </radialGradient>
+    <radialGradient id="gRedIn" cx="50%" cy="50%" r="60%">
+      <stop offset="0" stop-color="#3d0410"/><stop offset=".6" stop-color="#8a0f24"/><stop offset="1" stop-color="#c72c46"/>
+    </radialGradient>
+    <radialGradient id="gPink" cx="50%" cy="55%" r="60%">
+      <stop offset="0" stop-color="#c25a6e"/><stop offset=".5" stop-color="#ec9fae"/><stop offset=".9" stop-color="#fbd7dd"/><stop offset="1" stop-color="#fff0f2"/>
+    </radialGradient>
+    <radialGradient id="gPinkIn" cx="50%" cy="50%" r="60%">
+      <stop offset="0" stop-color="#9c3049"/><stop offset=".6" stop-color="#df8597"/><stop offset="1" stop-color="#f7c3cc"/>
+    </radialGradient>
+    <linearGradient id="gLeaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6f8a4f"/><stop offset="1" stop-color="#2f4a26"/>
+    </linearGradient>
+    <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0c4"/><stop offset=".5" stop-color="#d7b263"/><stop offset="1" stop-color="#9a7425"/>
+    </linearGradient>
+    <linearGradient id="gRibbon" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c72a43"/><stop offset=".5" stop-color="#8e1426"/><stop offset="1" stop-color="#4f0712"/>
+    </linearGradient>
+
+    <!-- a layered rose head -->
+    <g id="roseHeadRed">
+      <g fill="url(#gRed)" stroke="#5a0b16" stroke-width=".6" stroke-opacity=".35">
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z" transform="rotate(0)"/>
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z" transform="rotate(72)"/>
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z" transform="rotate(144)"/>
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z" transform="rotate(216)"/>
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z" transform="rotate(288)"/>
+      </g>
+      <g fill="url(#gRedIn)" stroke="#3d0410" stroke-width=".5" stroke-opacity=".4" transform="scale(.66) rotate(36)">
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z"/>
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z" transform="rotate(72)"/>
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z" transform="rotate(144)"/>
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z" transform="rotate(216)"/>
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z" transform="rotate(288)"/>
+      </g>
+      <circle r="11" fill="#4a0510"/>
+      <path d="M-9 -2 C-8 -12 6 -14 9 -4 C11 4 2 9 -3 6 C-7 3 -4 -4 1 -3" fill="none" stroke="#c7304a" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M-5 1 C-3 -5 4 -5 4 0" fill="none" stroke="#e5546b" stroke-width="1.6" stroke-linecap="round"/>
+    </g>
+    <g id="roseHeadPink">
+      <g fill="url(#gPink)" stroke="#a03a52" stroke-width=".6" stroke-opacity=".3">
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z"/>
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z" transform="rotate(72)"/>
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z" transform="rotate(144)"/>
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z" transform="rotate(216)"/>
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z" transform="rotate(288)"/>
+      </g>
+      <g fill="url(#gPinkIn)" stroke="#8e2a40" stroke-width=".5" stroke-opacity=".35" transform="scale(.66) rotate(36)">
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z"/>
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z" transform="rotate(72)"/>
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z" transform="rotate(144)"/>
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z" transform="rotate(216)"/>
+        <path d="M0 2 C-26 4 -40 -14 -30 -30 C-20 -44 -4 -38 0 -26 C4 -38 20 -44 30 -30 C40 -14 26 4 0 2Z" transform="rotate(288)"/>
+      </g>
+      <circle r="10" fill="#a8354d"/>
+      <path d="M-9 -2 C-8 -12 6 -14 9 -4 C11 4 2 9 -3 6 C-7 3 -4 -4 1 -3" fill="none" stroke="#f3b2bf" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <path id="leaf" d="M0 0 C14 -10 34 -10 48 0 C34 10 14 10 0 0Z"/>
+    <g id="filigree" fill="none" stroke="url(#gGold)" stroke-width="1.4" stroke-linecap="round">
+      <path d="M0 0 C10 -18 30 -20 40 -6 C46 4 38 14 30 10 C24 7 26 0 32 0"/>
+      <path d="M0 0 C10 18 30 20 40 6 C46 -4 38 -14 30 -10 C24 -7 26 0 32 0" opacity=".8"/>
+      <path d="M40 -6 C52 -20 70 -18 78 -6"/>
+      <path d="M40 6 C52 20 70 18 78 6" opacity=".8"/>
+      <circle cx="84" cy="0" r="2.5" fill="url(#gGold)"/>
+    </g>
+  </defs>
+</svg>
+
+<!-- rose bouquet template used for corners -->
+<template id="bouquet">
+  <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+    <g fill="url(#gLeaf)">
+      <use href="#leaf" transform="translate(120 140) rotate(20) scale(1.3)"/>
+      <use href="#leaf" transform="translate(90 120) rotate(-160) scale(1.1)"/>
+      <use href="#leaf" transform="translate(170 90) rotate(-20) scale(1.2)"/>
+      <use href="#leaf" transform="translate(70 180) rotate(110) scale(1)"/>
+      <use href="#leaf" transform="translate(200 160) rotate(40) scale(.9)"/>
+    </g>
+    <g transform="translate(40 60)"><use href="#filigree" transform="rotate(30) scale(1.4)"/></g>
+    <g transform="translate(150 180)"><use href="#filigree" transform="rotate(70) scale(1.2)"/></g>
+    <g transform="translate(200 40)"><use href="#filigree" transform="rotate(-10) scale(1.1)"/></g>
+    <use href="#ROSE_A" transform="translate(110 100) scale(1.55) rotate(10)"/>
+    <use href="#ROSE_B" transform="translate(190 70) scale(1.05) rotate(-20)"/>
+    <use href="#ROSE_B" transform="translate(70 170) scale(1.0) rotate(40)"/>
+    <use href="#ROSE_A" transform="translate(40 80) scale(.7) rotate(-30)"/>
+    <g fill="#f1d9a0"><circle cx="230" cy="120" r="3"/><circle cx="242" cy="128" r="2"/><circle cx="140" cy="200" r="2.5"/><circle cx="20" cy="140" r="2"/></g>
+  </svg>
+</template>
+
+<canvas id="sparkles"></canvas>
+<div id="petals"></div>
+
+<!-- ======= INTRO ENVELOPE ======= -->
+<section id="intro" aria-label="Tap to open the invitation" role="button" tabindex="0">
+  <div class="door left">
+    <svg class="lines" viewBox="0 0 400 800" preserveAspectRatio="none" aria-hidden="true">
+      <g stroke="url(#gGold)" stroke-width="1.3" fill="none" opacity=".75">
+        <path d="M0 0 L200 400 L400 0"/><path d="M0 800 L200 400 L400 800"/>
+        <path d="M0 8 L200 408 L400 8" opacity=".4"/>
+      </g>
+    </svg>
+    <div class="corner-roses tl" data-bouquet="red"></div>
+    <div class="corner-roses bl" data-bouquet="red"></div>
+  </div>
+  <div class="door right">
+    <svg class="lines" viewBox="0 0 400 800" preserveAspectRatio="none" aria-hidden="true">
+      <g stroke="url(#gGold)" stroke-width="1.3" fill="none" opacity=".75">
+        <path d="M0 0 L200 400 L400 0"/><path d="M0 800 L200 400 L400 800"/>
+        <path d="M0 8 L200 408 L400 8" opacity=".4"/>
+      </g>
+    </svg>
+    <div class="corner-roses tr" data-bouquet="red"></div>
+    <div class="corner-roses br" data-bouquet="red"></div>
+  </div>
+
+  <div class="intro-center">
+    <div class="kicker">YOU'RE INVITED</div>
+    <div class="seal-wrap">
+      <svg class="bow" viewBox="0 0 400 400" aria-hidden="true">
+        <!-- ribbon tails -->
+        <path d="M200 205 L120 360 L150 352 L162 380 L212 220Z" fill="url(#gRibbon)" stroke="#e8c27a" stroke-width="1.2"/>
+        <path d="M200 205 L280 360 L250 352 L238 380 L188 220Z" fill="url(#gRibbon)" stroke="#e8c27a" stroke-width="1.2"/>
+        <!-- loops -->
+        <path d="M200 200 C150 120 40 110 50 190 C58 260 150 250 200 200Z" fill="url(#gRibbon)" stroke="#e8c27a" stroke-width="1.4"/>
+        <path d="M200 200 C250 120 360 110 350 190 C342 260 250 250 200 200Z" fill="url(#gRibbon)" stroke="#e8c27a" stroke-width="1.4"/>
+        <path d="M195 198 C160 150 90 145 85 190" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="6" stroke-linecap="round"/>
+        <path d="M205 198 C240 150 310 145 315 190" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="6" stroke-linecap="round"/>
+        <!-- pendant -->
+        <path d="M200 270 L200 300" stroke="#e8c27a" stroke-width="1.5"/>
+        <path d="M200 300 L190 314 L200 334 L210 314Z" fill="#b0122e" stroke="#f0d08c" stroke-width="1.5"/>
+      </svg>
+      <div class="seal" id="seal" title="Tap to open"><div class="mono">P<small>&amp;</small>R</div></div>
+    </div>
+    <div class="tag">A BEAUTIFUL BEGINNING</div>
+    <div class="names-intro">Poonam &amp; Rahul</div>
+    <div class="tap"><span class="hand">✦</span> Tap the seal to open <span class="hand">✦</span></div>
+  </div>
+</section>
+
+<div class="lang-toggle" role="group" aria-label="Language">
+  <button data-lang="en" class="on">English</button>
+  <button data-lang="hi" class="hindi">हिंदी</button>
+</div>
+
+<!-- ======= MAIN INVITATION ======= -->
+<main>
+
+  <!-- Ganesh blessing -->
+  <section class="card arch">
+    <div class="rose-deco tl" data-bouquet="pink"></div>
+    <div class="rose-deco tr" data-bouquet="red"></div>
+    <svg class="ganesh" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="46" fill="none" stroke="url(#gGold)" stroke-width="1.5"/>
+      <circle cx="50" cy="50" r="41" fill="none" stroke="url(#gGold)" stroke-width=".7" stroke-dasharray="2 3"/>
+      <text x="50" y="66" text-anchor="middle" font-family="Tiro Devanagari Hindi, serif" font-size="46" fill="#8e1426">ॐ</text>
+    </svg>
+    <div class="om-line">॥ श्री गणेशाय नमः ॥</div>
+    <p class="shloka">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभः ।<br>निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥</p>
+    <div class="divider"><span>❦</span></div>
+    <div class="monogram">P<span style="font-family:var(--serif);font-size:.45em;margin:0 2px">&amp;</span>R</div>
+    <div class="small-caps"><span lang-en>Together with their families</span><span lang-hi>अपने परिवारों के आशीर्वाद सहित</span></div>
+    <h1 class="names">
+      <span lang-en>Poonam<span class="amp">and</span>Rahul</span>
+      <span lang-hi>पूनम<span class="amp hindi">संग</span>राहुल</span>
+    </h1>
+    <div class="date-row">
+      <div class="side"><span lang-en>WEDNESDAY</span><span lang-hi>बुधवार</span></div>
+      <div class="day">25</div>
+      <div class="side"><span lang-en>NOV · 2026</span><span lang-hi>नवंबर 2026</span></div>
+    </div>
+    <p class="lead" style="margin-top:18px"><span lang-en>request the honour of your presence<br>as they begin their forever.</span><span lang-hi>आपकी गरिमामयी उपस्थिति के आकांक्षी हैं,<br>जब वे जीवन के इस पावन बंधन में बंधेंगे।</span></p>
+  </section>
+
+  <!-- Families -->
+  <section class="card">
+    <div class="rose-deco br" data-bouquet="pink"></div>
+    <h2 class="title"><span lang-en>The Wedding</span><span lang-hi>शुभ विवाह</span></h2>
+    <p class="lead">
+      <span lang-en>With the blessings of the late Smt. Ramkali Devi &amp; the late Sh. Padam Singh, Smt. Meena &amp; the late Sh. Niranjan Singh joyfully invite you to celebrate the marriage of their daughter</span>
+      <span lang-hi>स्व. श्रीमती रामकली देवी एवं स्व. श्री पदम सिंह के आशीर्वाद से, श्रीमती मीना एवं स्व. श्री निरंजन सिंह अपनी सुपुत्री के शुभ विवाह में आपको सादर आमंत्रित करते हैं</span>
+    </p>
+    <div class="person">
+      <div class="who"><span lang-en>Poonam</span><span lang-hi>चि. पूनम</span></div>
+      <div class="rel"><span lang-en>granddaughter of the late Smt. Ramkali Devi &amp; the late Sh. Padam Singh<br>daughter of Smt. Meena &amp; the late Sh. Niranjan Singh</span><span lang-hi>पौत्री — स्व. श्रीमती रामकली देवी एवं स्व. श्री पदम सिंह<br>सुपुत्री — श्रीमती मीना एवं स्व. श्री निरंजन सिंह</span></div>
+      <div class="heart">♥</div>
+    </div>
+    <div class="person" style="margin-top:8px">
+      <div class="who"><span lang-en>Rahul</span><span lang-hi>चि. राहुल</span></div>
+      <div class="rel"><span lang-en>son of Smt. Pushpa Sawant &amp; Sh. Rajinder Singh</span><span lang-hi>सुपुत्र — श्रीमती पुष्पा सावंत एवं श्री राजिंदर सिंह</span></div>
+    </div>
+  </section>
+
+  <!-- Save our date -->
+  <section class="card arch" id="save">
+    <div class="rose-deco tl" data-bouquet="red"></div>
+    <h2 class="title"><span lang-en>Save Our Date</span><span lang-hi>शुभ तिथि</span></h2>
+    <div class="calendar" id="calendar">
+      <div class="cal-month"><span lang-en>NOVEMBER 2026</span><span lang-hi>नवंबर 2026</span></div>
+      <div class="cal-grid" id="calGrid"></div>
+    </div>
+    <button class="btn primary" id="revealBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7.5-4.6-9.5-9.2C1 8.2 3.4 4.5 7 4.5c2.1 0 3.6 1.2 5 3 1.4-1.8 2.9-3 5-3 3.6 0 6 3.7 4.5 7.3C19.5 16.4 12 21 12 21z"/></svg>
+      <span id="revealTxt"><span lang-en>Tap to Reveal the Date</span><span lang-hi>तिथि देखने के लिए स्पर्श करें</span></span>
+    </button>
+    <a class="btn" id="calBtn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg>
+      <span lang-en>Save the Date</span><span lang-hi>कैलेंडर में जोड़ें</span>
+    </a>
+  </section>
+
+  <!-- Countdown -->
+  <section class="card">
+    <h2 class="title"><span lang-en>Counting the Moments</span><span lang-hi>शुभ घड़ी की प्रतीक्षा</span></h2>
+    <div class="countdown">
+      <div class="cd"><b id="cdD">--</b><span lang-en>DAYS</span><span lang-hi>दिन</span></div>
+      <div class="cd"><b id="cdH">--</b><span lang-en>HOURS</span><span lang-hi>घंटे</span></div>
+      <div class="cd"><b id="cdM">--</b><span lang-en>MINUTES</span><span lang-hi>मिनट</span></div>
+      <div class="cd"><b id="cdS">--</b><span lang-en>SECONDS</span><span lang-hi>सेकंड</span></div>
+    </div>
+    <p class="lead" id="cdNote" style="font-style:italic"><span lang-en>until we say “forever”</span><span lang-hi>सात फेरों के पावन क्षण तक</span></p>
+  </section>
+
+  <!-- Venue -->
+  <section class="card arch">
+    <div class="rose-deco tr" data-bouquet="pink"></div>
+    <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
+    <h2 class="title"><span lang-en>The Venue</span><span lang-hi>विवाह स्थल</span></h2>
+    <div class="venue-name"><span lang-en>VG Salasar Garden</span><span lang-hi>वीजी सालासर गार्डन</span></div>
+    <p class="venue-addr"><span lang-en>Nathan Vihar, Ranholla, Nangloi,<br>Najafgarh Road, New Delhi – 110041</span><span lang-hi>नाथन विहार, रणहोला, नांगलोई,<br>नजफगढ़ रोड, नई दिल्ली – 110041</span></p>
+    <a class="btn primary" id="mapBtn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
+      <span lang-en>View on Google Maps</span><span lang-hi>गूगल मैप्स पर देखें</span>
+    </a>
+    <a class="btn" id="dirBtn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>
+      <span lang-en>Get Directions</span><span lang-hi>रास्ता देखें</span>
+    </a>
+  </section>
+
+  <!-- Closing -->
+  <section class="card closing">
+    <div class="rose-deco tl" data-bouquet="pink"></div>
+    <div class="rose-deco br" data-bouquet="red"></div>
+    <p class="couplet">विघ्न हरण मंगल करण, श्री गणपति महाराज ।<br>प्रथम निमंत्रण आपको, पूरन करियो काज ॥</p>
+    <div class="divider"><span>❦</span></div>
+    <div class="with"><span lang-en>With love &amp; warm wishes</span><span lang-hi class="hindi">सप्रेम शुभकामनाओं सहित</span></div>
+    <div class="from"><span lang-en>All Chahar Family<br>&amp; Friends</span><span lang-hi>समस्त चाहर परिवार एवं मित्रगण</span></div>
+    <p class="lead" style="margin-top:14px"><span lang-en>Your presence will make our day complete.</span><span lang-hi>आपकी उपस्थिति ही हमारा सौभाग्य है।</span></p>
+  </section>
+
+  <div class="footer-note">POONAM ♥ RAHUL · 25 · 11 · 2026</div>
+</main>
+
+<script>
+(function(){
+  /* ---------- bouquets ---------- */
+  const tpl = document.getElementById('bouquet').innerHTML;
+  document.querySelectorAll('[data-bouquet]').forEach(el=>{
+    const red = el.dataset.bouquet === 'red';
+    el.innerHTML = tpl.replaceAll('#ROSE_A', red ? '#roseHeadRed' : '#roseHeadPink')
+                      .replaceAll('#ROSE_B', red ? '#roseHeadPink' : '#roseHeadRed');
+  });
+
+  /* ---------- links ---------- */
+  const venue = 'VG Salasar Garden, Nathan Vihar, Ranholla, Nangloi, Najafgarh Road, New Delhi 110041';
+  const q = encodeURIComponent(venue);
+  document.getElementById('mapBtn').href = 'https://www.google.com/maps/search/?api=1&query=' + q;
+  document.getElementById('dirBtn').href = 'https://www.google.com/maps/dir/?api=1&destination=' + q;
+  document.getElementById('calBtn').href = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+    + '&text=' + encodeURIComponent('Poonam & Rahul — Wedding')
+    + '&dates=20261125/20261126'
+    + '&details=' + encodeURIComponent('With love, All Chahar Family & Friends')
+    + '&location=' + q;
+
+  /* ---------- language ---------- */
+  document.querySelectorAll('.lang-toggle button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('.lang-toggle button').forEach(x=>x.classList.toggle('on', x===b));
+      document.body.classList.toggle('hi', b.dataset.lang==='hi');
+      buildCalendar();
+    });
+  });
+
+  /* ---------- calendar ---------- */
+  const grid = document.getElementById('calGrid');
+  function buildCalendar(){
+    const hi = document.body.classList.contains('hi');
+    const dows = hi ? ['रवि','सोम','मंगल','बुध','गुरु','शुक्र','शनि'] : ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+    let html = dows.map(d=>`<div class="dow">${d}</div>`).join('');
+    const first = new Date(2026,10,1).getDay();
+    for(let i=0;i<first;i++) html += '<div></div>';
+    for(let d=1; d<=30; d++){
+      html += d===25 ? `<div class="d wed">25<span class="hz">♥</span><span class="num">25</span></div>` : `<div class="d">${d}</div>`;
+    }
+    grid.innerHTML = html;
+  }
+  buildCalendar();
+  const calendar = document.getElementById('calendar');
+  document.getElementById('revealBtn').addEventListener('click', e=>{
+    calendar.classList.add('revealed');
+    document.getElementById('revealTxt').innerHTML = '<span lang-en>Date Revealed · 25 November</span><span lang-hi>शुभ तिथि · 25 नवंबर</span>';
+    const r = grid.querySelector('.wed').getBoundingClientRect();
+    burst(r.left + r.width/2, r.top + r.height/2, 22);
+    petalShower(26);
+  });
+
+  /* ---------- countdown ---------- */
+  const target = new Date('2026-11-25T00:00:00+05:30').getTime();
+  const pad = n => String(n).padStart(2,'0');
+  function tick(){
+    let s = Math.max(0, Math.floor((target - Date.now())/1000));
+    const d = Math.floor(s/86400); s%=86400;
+    const h = Math.floor(s/3600); s%=3600;
+    const m = Math.floor(s/60); s%=60;
+    cdD.textContent = d; cdH.textContent = pad(h); cdM.textContent = pad(m); cdS.textContent = pad(s);
+    if(target - Date.now() <= 0){
+      document.getElementById('cdNote').innerHTML = '<span lang-en>Today is the day! ♥</span><span lang-hi>आज शुभ विवाह का दिन है! ♥</span>';
+    }
+  }
+  const cdD=document.getElementById('cdD'),cdH=document.getElementById('cdH'),cdM=document.getElementById('cdM'),cdS=document.getElementById('cdS');
+  tick(); setInterval(tick,1000);
+
+  /* ---------- petals ---------- */
+  const petals = document.getElementById('petals');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function petal(delay){
+    const p = document.createElement('div');
+    p.className = 'petal' + (Math.random()<.45?' light':'');
+    const size = 12 + Math.random()*14;
+    p.style.width = size+'px'; p.style.height = size*1.2+'px';
+    p.style.left = Math.random()*100+'vw';
+    p.style.setProperty('--sway', (Math.random()*120-60)+'px');
+    p.style.animationDuration = (8 + Math.random()*8)+'s';
+    p.style.animationDelay = (delay||0)+'s';
+    petals.appendChild(p);
+    p.addEventListener('animationend',()=>p.remove());
+  }
+  function petalShower(n){ for(let i=0;i<n;i++) petal(Math.random()*1.5); }
+  let ambient;
+  function startAmbient(){ if(reduce) return; ambient = setInterval(()=>{ if(petals.childElementCount<26) petal(0); }, 900); }
+
+  function burst(x,y,n){
+    const glyphs=['♥','✦','❀','✧','♥'];
+    for(let i=0;i<n;i++){
+      const b=document.createElement('div'); b.className='burst';
+      b.textContent=glyphs[i%glyphs.length];
+      b.style.left=x+'px'; b.style.top=y+'px';
+      b.style.color=['#c2405a','#c9a24b','#8e1426','#e88aa0'][i%4];
+      const a=Math.random()*Math.PI*2, r=60+Math.random()*120;
+      b.style.setProperty('--dx',Math.cos(a)*r+'px'); b.style.setProperty('--dy',Math.sin(a)*r+'px');
+      b.style.setProperty('--r',(Math.random()*360)+'deg');
+      document.body.appendChild(b); setTimeout(()=>b.remove(),1500);
+    }
+  }
+
+  /* ---------- sparkles canvas ---------- */
+  const cv = document.getElementById('sparkles'), ctx = cv.getContext('2d');
+  let W,H,dpr; const parts=[]; let mode='intro';
+  function resize(){ dpr=Math.min(2,devicePixelRatio||1); W=innerWidth; H=innerHeight; cv.width=W*dpr; cv.height=H*dpr; cv.style.width=W+'px'; cv.style.height=H+'px'; ctx.setTransform(dpr,0,0,dpr,0,0); }
+  resize(); addEventListener('resize',resize);
+  function spawn(){
+    if(mode==='intro'){
+      // swirl ring around the seal, like a ribbon of light
+      const t=Math.random()*Math.PI*2;
+      parts.push({orbit:true,t,rad:Math.min(W,H)*(.22+Math.random()*.1),sp:.008+Math.random()*.01,life:1,dec:.004+Math.random()*.006,s:.6+Math.random()*1.8,tilt:.45});
+      if(Math.random()<.5) parts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.2,vy:-.1-Math.random()*.3,life:1,dec:.004+Math.random()*.006,s:.5+Math.random()*1.6});
+    } else if(Math.random()<.35){
+      parts.push({x:Math.random()*W,y:H+5,vx:(Math.random()-.5)*.25,vy:-.3-Math.random()*.5,life:1,dec:.003+Math.random()*.004,s:.6+Math.random()*1.4});
+    }
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const max = mode==='intro'?420:90;
+    if(parts.length<max){ spawn(); spawn(); }
+    const cx=W/2, cy=H/2;
+    for(let i=parts.length-1;i>=0;i--){
+      const p=parts[i];
+      if(p.orbit){ p.t+=p.sp; p.x=cx+Math.cos(p.t)*p.rad*1.25; p.y=cy+Math.sin(p.t)*p.rad*p.tilt + Math.sin(p.t*2)*p.rad*.15; }
+      else { p.x+=p.vx; p.y+=p.vy; }
+      p.life-=p.dec;
+      if(p.life<=0){parts.splice(i,1);continue}
+      const a=Math.sin(p.life*Math.PI);
+      const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.s*4);
+      g.addColorStop(0,`rgba(255,244,214,${a})`); g.addColorStop(.4,`rgba(240,200,120,${a*.5})`); g.addColorStop(1,'rgba(240,200,120,0)');
+      ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,p.y,p.s*4,0,Math.PI*2); ctx.fill();
+      if(p.s>1.6){ ctx.strokeStyle=`rgba(255,240,200,${a*.7})`; ctx.lineWidth=.6; ctx.beginPath(); ctx.moveTo(p.x-p.s*5,p.y); ctx.lineTo(p.x+p.s*5,p.y); ctx.moveTo(p.x,p.y-p.s*5); ctx.lineTo(p.x,p.y+p.s*5); ctx.stroke(); }
+    }
+    requestAnimationFrame(draw);
+  }
+  cv.style.zIndex = 51; // above envelope during intro
+  if(!reduce) draw();
+
+  /* ---------- open envelope ---------- */
+  const intro = document.getElementById('intro');
+  let opened=false;
+  function openInvite(){
+    if(opened) return; opened=true;
+    intro.classList.add('open');
+    burst(innerWidth/2, innerHeight/2, 30);
+    setTimeout(()=>{ mode='page'; parts.length=0; cv.style.zIndex=2; document.body.classList.add('revealed'); document.body.classList.remove('locked'); petalShower(40); startAmbient(); }, 900);
+    setTimeout(()=>intro.classList.add('gone'), 2000);
+  }
+  intro.addEventListener('click', openInvite);
+  intro.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openInvite(); } });
+
+  /* ---------- reveal cards on scroll ---------- */
+  const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.15});
+  document.querySelectorAll('.card').forEach(c=>io.observe(c));
+})();
+</script>
+</body>
+</html>
